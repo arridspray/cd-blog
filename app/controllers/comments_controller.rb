@@ -43,7 +43,9 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(params[:comment])
     @comment.user_id = current_user.id
+    @comment.save
       redirect_to post_path(@post)
+
   end
 
   # PUT /comments/1
