@@ -1,0 +1,14 @@
+.austinhomepage {
+    background-color: #ff0000;
+    width: 400px;
+    height: 400px;
+    font-size: 100px;
+    font-family: "Arial";
+    font-weight: bold;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+#homepage_title {
+    color: blue;
+}

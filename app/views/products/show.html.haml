@@ -1,0 +1,38 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.brand{:href => "#"} Project name
+      .nav-collapse
+        %ul.nav
+          %li.active
+            %a{:href => "#"} Home
+          %li
+            %a{:href => "#about"} About
+          %li
+            %a{:href => "#contact"} Contact
+
+%p#notice= notice
+
+%p
+  %b Product:
+  = @product.product_id
+%p
+  %b Price:
+  = @product.price
+%p
+  %b Name:
+  = @product.name
+%p
+  %b Description:
+  = @product.description
+%p
+  %b Clearance:
+  = @product.clearance
+
+= link_to 'Edit', edit_product_path(@product)
+\|
+= link_to 'Back', products_path

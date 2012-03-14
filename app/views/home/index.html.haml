@@ -1,0 +1,26 @@
+.container
+  / Main hero unit for a primary marketing message or call to action
+  .hero-unit
+    %h1 Mass Law Blog
+    %p The Boston area's premier legal blog.
+    %p
+      = link_to "Read More", posts_path, :class => "btn btn-large btn-danger"
+
+  / Example row of columns
+  .row
+    - @posts.each do |post|
+      .span4
+        %h4
+          = truncate(post.title, :length => 40)
+        %p
+          = truncate(post.content, :length => 255)
+        %p
+          = link_to 'Read More', post, :class => "btn btn-large btn-primary"
+
+  %hr
+    %footer
+      %p © Charles Ventures 2012
+/ /container
+
+//Don't Touch
+

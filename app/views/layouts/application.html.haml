@@ -1,0 +1,41 @@
+!!!
+%html
+  %head
+    %title Blog
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.brand{:href => "#"} Project CV
+          .nav-collapse
+            %ul.nav
+              %li.active
+                %a{:href => "#"} Home
+              %li
+                = link_to "Blog", posts_path
+              %li
+                = link_to "Products", products_path
+              %li
+                = link_to "About", "home/about"
+              %li
+                %a{:href => "#contact"} Contact
+            %ul.nav.pull-right
+              - if current_user
+                %li
+                  = link_to "Edit Profile", edit_current_user_path
+                %li
+                  = link_to "Logout", logout_path
+              - else
+                %li
+                  = link_to "Register", signup_path
+                %li
+                  = link_to "Login", login_path
+    .container
+      = yield
